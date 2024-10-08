@@ -16,21 +16,17 @@
     "params" :[
       {
         "name" : "disease",
-        "value" : "malaria normalized",
+        "value" : "typhoid normalized",
         "bind": {
           "input": "select",
           "options":[
           "typhoid normalized",
-          "hepatitis A normalized",
-          "cholera normalized",
-          "malaria normalized"
+          "hepatitis A normalized"
         ],
         "name": "Select Disease: ",
         "labels": [
           "Typhoid",
-          "Hepatitis A",
-          "Cholera",
-          "Malaria"
+          "Hepatitis A"
         ]
       }
     }
@@ -67,12 +63,14 @@
         "type": "quantitative",      
         "scale": {
           "type": "linear",
-          "domain": [5, 50, 500, 5000], 
+          
           "range": ["#f7e0df","#c74940", "#992820", "#570c07"] 
         },
         "title": "Incidence Per 1M Population",
         "legend": {
-          "orient": "bottom-left" 
+          "orient": "bottom-left",
+          "labelFontSize": 14,
+          "titleFontSize": 12
         } 
       }
     }
