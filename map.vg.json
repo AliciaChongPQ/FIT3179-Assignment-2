@@ -7,7 +7,7 @@
        "align": "center",
        "orient": "top"  
   },
-    "width": 600,
+    "width": 750,
     "height": 350,
     "projection": {"type": "equalEarth",
                     "scale": 1700,
