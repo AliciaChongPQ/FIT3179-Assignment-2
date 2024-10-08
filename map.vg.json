@@ -7,12 +7,12 @@
        "align": "center",
        "orient": "top"  
   },
-    "width": 600,
-    "height": 350,
+    "width": 850,
+    "height": 520,
     "projection": {"type": "equalEarth",
-                    "scale": 1700,
+                    "scale":2600,
                     "center": [110.3, -1],
-                    "translate": [320, 350]},
+                    "translate": [480, 490]},
     "params" :[
       {
         "name" : "disease",
