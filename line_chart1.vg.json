@@ -17,13 +17,22 @@
       "x": {
         "field": "Year",
         "type": "ordinal",
-        "title":"Year"
+        "title":"Year",
+        "axis": {
+            "labelFontSize": 14,  
+            "labelAngle": 0,
+            "titleFontSize": 16    
+          }
       },
       "y": {
         "field": "Total Incidence",
         "type": "quantitative",
-        "title": "#Cases"
+        "title": "#Cases",
+        "axis": {
+            "labelFontSize": 14,
+            "titleFontSize": 16 
+          }
       },
-      "color": {"field": "Disease", "type": "nominal", "title": "Disease", "legend": {"orient":"bottom-left", "labelFontSize": 14, "symbolSize": 200,"columns": 4}}
+      "color": {"field": "Disease", "type": "nominal", "title": "Disease", "legend": {"orient":"bottom-left", "labelFontSize": 14, "symbolSize": 300,"columns": 4,  "titleFontSize": 16 }}
   }
   }
