@@ -97,8 +97,69 @@
   "mark": {
     "type": "text",
     "color": "black",
+    "fontSize": 10,
+    "dx": 5,
+    "dy": -5
+  },
+  "encoding": {
+    "longitude": {"field": "longitude", "type": "quantitative"},
+    "latitude": {"field": "latitude", "type": "quantitative"},
+    "text": {"field": "state", "type": "nominal"}
+  }
+}, 
+{
+  "data": {
+    "values": [
+      {"state": "\\", "latitude": 5.55, "longitude": 115.0}
+    ]
+  },
+  "mark": {
+    "type": "text",
+    "color": "black",
     "fontWeight": "bold",
-    "fontSize": 11,
+    "fontSize": 40,
+    "dx": 5,
+    "dy": -5
+  },
+  "encoding": {
+    "longitude": {"field": "longitude", "type": "quantitative"},
+    "latitude": {"field": "latitude", "type": "quantitative"},
+    "text": {"field": "state", "type": "nominal"}
+  }
+},
+{
+  "data": {
+    "values": [
+      {"state": "---", "latitude": 6.05, "longitude": 112.5},
+      {"state": "----", "latitude": 6.05, "longitude": 113.0}
+    ]
+  },
+  "mark": {
+    "type": "text",
+    "color": "lightyellow",
+    "fontWeight": "bold",
+    "fontSize": 190,
+    "dx": 5,
+    "dy": -5
+  },
+  "encoding": {
+    "longitude": {"field": "longitude", "type": "quantitative"},
+    "latitude": {"field": "latitude", "type": "quantitative"},
+    "text": {"field": "state", "type": "nominal"}
+  }
+},
+{
+  "data": {
+    "values": [
+      {"state": "Sabah sees the highest rate of both ", "latitude": 6.00, "longitude": 113.0753},
+      {"state": "diseases compared to other States", "latitude": 5.80, "longitude": 113.0753}
+    ]
+  },
+  "mark": {
+    "type": "text",
+    "color": "black",
+    "fontWeight": "bold",
+    "fontSize": 12,
     "dx": 5,
     "dy": -5
   },
