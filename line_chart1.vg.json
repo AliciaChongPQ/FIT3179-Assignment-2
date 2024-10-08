@@ -1,7 +1,7 @@
 {
     "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
     "title": {
-      "text":"Incidence of water-borne diseases over the years",
+      "text":"Incidence of Water-Borne Diseases in Malaysia (2018-2021)",
       "fontSize": 18,
       "anchor": "middle",  
        "align": "center",
