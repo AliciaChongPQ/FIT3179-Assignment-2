@@ -1,7 +1,7 @@
 {
     "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
     "title": {
-      "text":"Incidence rate of water-borne diseases and percentage of households without clean water by State",
+      "text":"Incidence of water-borne diseases over the years",
       "fontSize": 18,
       "anchor": "middle",  
        "align": "center",
@@ -10,28 +10,20 @@
     "height": 400,
     "width": 500,
     "data": {
-      "url": "https://raw.githubusercontent.com/AliciaChongPQ/FIT3179-Assignment-2/refs/heads/main/diseases_per_1M.csv"
+      "url": "https://raw.githubusercontent.com/AliciaChongPQ/FIT3179-Assignment-2/refs/heads/main/diseases_by_year.csv"
     },
     "mark": "line",
     "encoding": {
       "x": {
-        "field": "water_treatment_plant_per_kms",
-        "type": "quantitative",
-        "title":"Number of Water Treatment Plants per KM^2"
+        "field": "Year",
+        "type": "ordinal",
+        "title":"Year"
       },
       "y": {
-        "field": "percentage_houses_without_clean_water",
+        "field": "Total Incidence",
         "type": "quantitative",
-        "title": "Percentage of Houses without Clean Water (%)"
+        "title": "#Cases"
       },
-      "size": {"field": "total_disease_incidence_rate", "type": "quantitative", "scale": {"type": "log", "range": [100, 2000]}, "title": "Total Incidence rate of Typhoid, Malaria and Hepatitis A"},
-      "color": {"field": "water_supply_interruption_per_1M", "type": "quantitative", "title": "water_supply_interruption_per_1M"},
-      "tooltip": [
-        {"field": "State", "type": "nominal"},
-        {"field": "water_treatment_plant_per_kms", "type": "quantitative", "title": "Number of Water Treatment Plants per KM^2"},
-        {"field": "percentage_houses_without_clean_water", "type": "quantitative", "title": "Percentage of Houses without Clean Water"},
-        {"field": "total_disease_incidence_rate", "type": "quantitative", "title": "Total Incidence rate of Typhoid, Malaria and Hepatitis A"},
-        {"field": "water_supply_interruption_per_1M", "type": "quantitative", "format": ",", "title": "water_supply_interruption_per_1M"}
-      ]
+      "color": {"field": "Disease", "type": "nominal", "title": "Disease"}
   }
   }
