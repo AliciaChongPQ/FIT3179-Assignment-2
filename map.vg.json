@@ -47,7 +47,7 @@
         "lookup": "properties.name",
         "from": {
           "data": {
-            "url": "https://raw.githubusercontent.com/AliciaChongPQ/FIT3179/refs/heads/main/diseases_per_100000.csv"
+            "url": "https://raw.githubusercontent.com/AliciaChongPQ/FIT3179-Assignment-2/refs/heads/main/diseases_per_1M.csv"
           },
           "key": "State",
           "fields": ["typhoid normalized","hepatitis A normalized","cholera normalized", "malaria normalized"]
