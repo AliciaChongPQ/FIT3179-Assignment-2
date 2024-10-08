@@ -63,7 +63,7 @@
         "type": "quantitative",      
         "scale": {
           "type": "linear",
-          
+          "domain" : [0, 15, 30, 60],
           "range": ["#f7e0df","#c74940", "#992820", "#570c07"] 
         },
         "title": "Incidence Per 1M Population",
