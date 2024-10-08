@@ -24,6 +24,6 @@
         "type": "quantitative",
         "title": "#Cases"
       },
-      "color": {"field": "Disease", "type": "nominal", "title": "Disease"}
+      "color": {"field": "Disease", "type": "nominal", "title": "Disease", "legend": {"orient":"bottom-left", "labelFontSize": 14, "symbolSize": 200,"columns": 4}}
   }
   }
