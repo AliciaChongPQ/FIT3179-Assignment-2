@@ -12,6 +12,14 @@
     "data": {
       "url": "https://raw.githubusercontent.com/AliciaChongPQ/FIT3179-Assignment-2/refs/heads/main/diseases_by_year.csv"
     },
+    "transform": [
+    {
+      "filter": {
+        "field": "Disease",
+        "oneOf": ["Hepatitis A", "Typhoid"] 
+      }
+    }
+  ],
     "mark": "line",
     "encoding": {
       "x": {
