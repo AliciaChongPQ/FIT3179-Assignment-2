@@ -249,7 +249,12 @@
   "size": {      
     "field": "%_without_clean_water",      
     "type": "quantitative",      
-    "title": "%_without_clean_water"
+    "title": "%_without_clean_water",
+    "legend": {
+    "orient": "bottom-left",
+    "labelFontSize": 12,
+    "titleFontSize": 12
+  } 
   },
   "color": {"value": "lightgreen"},
   
@@ -300,7 +305,12 @@
 "size": {      
   "field": "%_without_clean_water",      
   "type": "quantitative",      
-  "title": "%_without_clean_water"
+  "title": "%_without_clean_water",
+  "legend": {
+    "orient": "bottom-left",
+    "labelFontSize": 12,
+    "titleFontSize": 12
+  } 
 },
 "color": {"value": "lightgreen"},
 
