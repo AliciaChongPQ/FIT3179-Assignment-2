@@ -97,7 +97,8 @@
   "mark": {
     "type": "text",
     "color": "black",
-    "fontSize": 10,
+    "fontWeight" :"lighter",
+    "fontSize": 12,
     "dx": 5,
     "dy": -5
   },
@@ -212,18 +213,18 @@
 {"data": {
     "values": [
       {"state": "Johor", "latitude": 1.8854, "longitude": 103.4018},
-      {"state": "Kedah", "latitude": 6.1184, "longitude": 100.3681},
-      {"state": "Kelantan", "latitude": 6.2456, "longitude": 101.9976},
+      {"state": "Kedah", "latitude": 6.000, "longitude": 100.6681},
+      {"state": "Kelantan", "latitude": 6.0456, "longitude": 102.100},
       {"state": "Melaka", "latitude": 2.000, "longitude": 101.9000},
-      {"state": "Negeri Sembilan", "latitude": 2.7255, "longitude": 102.1424},
-      {"state": "Pahang", "latitude": 3.8126, "longitude": 102.3256},
-      {"state": "Perak", "latitude": 4.5921, "longitude": 100.4901},
-      {"state": "Perlis", "latitude": 6.4431, "longitude": 100.1983},
-      {"state": "Pulau Pinang", "latitude": 5.4141, "longitude": 100.3288},
-      {"state": "Sabah", "latitude": 5.38, "longitude": 117.0753},
-      {"state": "Sarawak", "latitude": 2.478, "longitude": 113.0592},
-      {"state": "Selangor", "latitude": 3.3738, "longitude": 101.3683},
-      {"state": "Terengganu", "latitude": 5.0117, "longitude": 103.2524}
+      {"state": "Negeri Sembilan", "latitude": 2.5555, "longitude": 102.1424},
+      {"state": "Pahang", "latitude": 3.6526, "longitude": 102.4256},
+      {"state": "Perak", "latitude": 4.4621, "longitude": 100.6401},
+      {"state": "Perlis", "latitude": 6.8531, "longitude": 100.383},
+      {"state": "Pulau Pinang", "latitude": 5.3000, "longitude": 99.9288},
+      {"state": "Sabah", "latitude": 5.18, "longitude": 117.0753},
+      {"state": "Sarawak", "latitude": 2.278, "longitude": 113.2192},
+      {"state": "Selangor", "latitude": 3.4738, "longitude": 100.7000},
+      {"state": "Terengganu", "latitude": 4.9000, "longitude": 103.2524}
     ]
   },
   "transform": [
@@ -242,44 +243,33 @@
       "as": "%_without_clean_water"
     }
   ],
-"mark": {"type" : "point", "stroke": "white", "strokeWidth":3},
+"mark": {"type" : "point", "stroke": "white", "strokeWidth":5},
 "encoding": {
   "longitude":{"field": "longitude", "type":"quantitative"},
   "latitude": {"field": "latitude", "type": "quantitative"},
   "size": {      
     "field": "%_without_clean_water",      
-    "type": "quantitative",      
-    "title": "%_without_clean_water",
-    "legend": {
-    "orient": "bottom-left",
-    "labelFontSize": 12,
-    "titleFontSize": 12
-  } 
-  },
-  "color": {"value": "lightgreen"},
-  
-  "tooltip": [
-      {"field": "state", "type": "nominal", "title": "State"},
-      {"field": "%_without_clean_water", "type": "quantitative", "title": "% Without Clean Water", "format": ".2f"}
-    ]
+    "type": "quantitative",
+    "title": "%_without_clean_water"
+  }
 }
 
 },
 {"data": {
   "values": [
     {"state": "Johor", "latitude": 1.8854, "longitude": 103.4018},
-    {"state": "Kedah", "latitude": 6.1184, "longitude": 100.3681},
-    {"state": "Kelantan", "latitude": 6.2456, "longitude": 101.9976},
+    {"state": "Kedah", "latitude": 6.000, "longitude": 100.6681},
+    {"state": "Kelantan", "latitude": 6.0456, "longitude": 102.100},
     {"state": "Melaka", "latitude": 2.000, "longitude": 101.9000},
-    {"state": "Negeri Sembilan", "latitude": 2.7255, "longitude": 102.1424},
-    {"state": "Pahang", "latitude": 3.8126, "longitude": 102.3256},
-    {"state": "Perak", "latitude": 4.5921, "longitude": 100.4901},
-    {"state": "Perlis", "latitude": 6.4431, "longitude": 100.1983},
-    {"state": "Pulau Pinang", "latitude": 5.4141, "longitude": 100.3288},
-    {"state": "Sabah", "latitude": 5.38, "longitude": 117.0753},
-    {"state": "Sarawak", "latitude": 2.478, "longitude": 113.0592},
-    {"state": "Selangor", "latitude": 3.3738, "longitude": 101.3683},
-    {"state": "Terengganu", "latitude": 5.0117, "longitude": 103.2524}
+    {"state": "Negeri Sembilan", "latitude": 2.5555, "longitude": 102.1424},
+    {"state": "Pahang", "latitude": 3.6526, "longitude": 102.4256},
+    {"state": "Perak", "latitude": 4.4621, "longitude": 100.6401},
+    {"state": "Perlis", "latitude": 6.8531, "longitude": 100.383},
+    {"state": "Pulau Pinang", "latitude": 5.3000, "longitude": 99.9288},
+    {"state": "Sabah", "latitude": 5.18, "longitude": 117.0753},
+    {"state": "Sarawak", "latitude": 2.278, "longitude": 113.2192},
+    {"state": "Selangor", "latitude": 3.4738, "longitude": 100.7000},
+    {"state": "Terengganu", "latitude": 4.9000, "longitude": 103.2524}
   ]
 },
 "transform": [
@@ -298,13 +288,13 @@
     "as": "%_without_clean_water"
   }
 ],
-"mark": {"type" : "point", "stroke": "black", "strokeWidth":2},
+"mark": {"type" : "point", "stroke": "black", "strokeWidth":3},
 "encoding": {
 "longitude":{"field": "longitude", "type":"quantitative"},
 "latitude": {"field": "latitude", "type": "quantitative"},
 "size": {      
   "field": "%_without_clean_water",      
-  "type": "quantitative",      
+  "type": "quantitative",    
   "title": "%_without_clean_water",
   "legend": {
     "orient": "bottom-left",
@@ -312,7 +302,6 @@
     "titleFontSize": 12
   } 
 },
-"color": {"value": "lightgreen"},
 
 "tooltip": [
     {"field": "state", "type": "nominal", "title": "State"},
