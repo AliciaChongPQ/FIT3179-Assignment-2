@@ -1,0 +1,85 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "Butterfly chart: Participation Rate (left) and Unemployment Rate (right) by state in 2022.",
+    "data": { "url": "https://raw.githubusercontent.com/AliciaChongPQ/FIT3179-Assignment-2/refs/heads/main/diseases_per_1M.csv" },
+    "transform": [
+      {
+        "calculate": "-datum.water_treatment_plant_per_kms",
+        "as": "neg_water_treatment_plants"
+      },
+      {
+        "calculate": "abs(datum.water_treatment_plants)",
+        "as": "abs_water_treatment_plants"
+      },
+      {
+        "calculate": "100 - datum.percentage_clean_water",
+        "as": "percnt_house_wout_clean_water"
+      },
+    
+      {"filter": "datum.percnt_house_wout_clean_water < 100"}
+    ],
+    "spacing": 0,
+    "hconcat": [
+      {
+        "title": "Number of Water Treatment Plants in State",
+        "mark": "bar",
+        "encoding": {
+          "y": {
+            "field": "State",
+            "type": "nominal",
+            "axis": null,
+            "sort":"-x"
+          },
+          "x": {
+            "field": "neg_water_treatment_plants",
+            "type":"quantitative",
+            "title": null,
+            "axis": {"labelExpr": "abs(datum.value)", "format": ".4f"}
+          },
+          "tooltip": [
+            {"field": "State"},
+            {"field": "abs_water_treatment_plants", "title": "abs_water_treatment_plants", "format": ".4f"}
+          ],
+          "color": {"value": "#675193"}
+        }
+      },
+      {
+        "width": 50,
+        "view": {"stroke": null},
+        "mark": {
+          "type": "text",
+          "align": "center"
+        },
+        "encoding": {
+          "y": {"field": "State", "type": "ordinal", "axis":null, "sort": "ascending"},  
+        "text": {"field": "State", "type": "nominal"}
+        }
+      },
+      {
+        "title": "Percentage of Houses without Clean Water",
+        "mark": "bar",
+        "encoding": {
+          "y": {
+            "field": "State",
+            "axis": null
+          },
+          "x": {
+            "field": "percnt_house_wout_clean_water",
+            "type" :"quantitative",
+            "title": null,
+            "axis": {"format": ".2f"}
+          },
+          "tooltip": [
+            {"field": "State"},
+            {"field": "percnt_house_wout_clean_water", "title": "percnt_house_wout_clean_water", "format": ".2f"}
+          ],
+          "color": {"value": "#ca8861"}
+        }
+      }
+    ],
+    "config": {
+      "view": {"stroke": null},
+      "axis": {"grid": false}
+    }
+  }
+  

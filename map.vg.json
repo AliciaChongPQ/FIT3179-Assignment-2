@@ -46,7 +46,7 @@
             "url": "https://raw.githubusercontent.com/AliciaChongPQ/FIT3179-Assignment-2/refs/heads/main/diseases_per_1M.csv"
           },
           "key": "State",
-          "fields": ["typhoid normalized","hepatitis A normalized","cholera normalized", "malaria normalized"]
+          "fields": ["typhoid normalized","hepatitis A normalized"]
         }
       },
       {
@@ -208,5 +208,107 @@
         "as":"selected_disease"
       }
     ]
+},
+{"data": {
+    "values": [
+      {"state": "Johor", "latitude": 1.8854, "longitude": 103.4018},
+      {"state": "Kedah", "latitude": 6.1184, "longitude": 100.3681},
+      {"state": "Kelantan", "latitude": 6.2456, "longitude": 101.9976},
+      {"state": "Melaka", "latitude": 2.000, "longitude": 101.9000},
+      {"state": "Negeri Sembilan", "latitude": 2.7255, "longitude": 102.1424},
+      {"state": "Pahang", "latitude": 3.8126, "longitude": 102.3256},
+      {"state": "Perak", "latitude": 4.5921, "longitude": 100.4901},
+      {"state": "Perlis", "latitude": 6.4431, "longitude": 100.1983},
+      {"state": "Pulau Pinang", "latitude": 5.4141, "longitude": 100.3288},
+      {"state": "Sabah", "latitude": 5.38, "longitude": 117.0753},
+      {"state": "Sarawak", "latitude": 2.478, "longitude": 113.0592},
+      {"state": "Selangor", "latitude": 3.3738, "longitude": 101.3683},
+      {"state": "Terengganu", "latitude": 5.0117, "longitude": 103.2524}
+    ]
+  },
+  "transform": [
+    {
+      "lookup": "state",
+      "from": {
+        "data": {
+          "url": "https://raw.githubusercontent.com/AliciaChongPQ/FIT3179-Assignment-2/refs/heads/main/diseases_per_1M.csv"
+        },
+        "key": "State",
+        "fields": ["percentage_clean_water"]
+      }
+    },
+    {
+      "calculate": "100 - datum.percentage_clean_water",
+      "as": "%_without_clean_water"
+    }
+  ],
+"mark": {"type" : "point", "stroke": "white", "strokeWidth":3},
+"encoding": {
+  "longitude":{"field": "longitude", "type":"quantitative"},
+  "latitude": {"field": "latitude", "type": "quantitative"},
+  "size": {      
+    "field": "%_without_clean_water",      
+    "type": "quantitative",      
+    "title": "%_without_clean_water"
+  },
+  "color": {"value": "lightgreen"},
+  
+  "tooltip": [
+      {"field": "state", "type": "nominal", "title": "State"},
+      {"field": "%_without_clean_water", "type": "quantitative", "title": "% Without Clean Water", "format": ".2f"}
+    ]
+}
+
+},
+{"data": {
+  "values": [
+    {"state": "Johor", "latitude": 1.8854, "longitude": 103.4018},
+    {"state": "Kedah", "latitude": 6.1184, "longitude": 100.3681},
+    {"state": "Kelantan", "latitude": 6.2456, "longitude": 101.9976},
+    {"state": "Melaka", "latitude": 2.000, "longitude": 101.9000},
+    {"state": "Negeri Sembilan", "latitude": 2.7255, "longitude": 102.1424},
+    {"state": "Pahang", "latitude": 3.8126, "longitude": 102.3256},
+    {"state": "Perak", "latitude": 4.5921, "longitude": 100.4901},
+    {"state": "Perlis", "latitude": 6.4431, "longitude": 100.1983},
+    {"state": "Pulau Pinang", "latitude": 5.4141, "longitude": 100.3288},
+    {"state": "Sabah", "latitude": 5.38, "longitude": 117.0753},
+    {"state": "Sarawak", "latitude": 2.478, "longitude": 113.0592},
+    {"state": "Selangor", "latitude": 3.3738, "longitude": 101.3683},
+    {"state": "Terengganu", "latitude": 5.0117, "longitude": 103.2524}
+  ]
+},
+"transform": [
+  {
+    "lookup": "state",
+    "from": {
+      "data": {
+        "url": "https://raw.githubusercontent.com/AliciaChongPQ/FIT3179-Assignment-2/refs/heads/main/diseases_per_1M.csv"
+      },
+      "key": "State",
+      "fields": ["percentage_clean_water"]
+    }
+  },
+  {
+    "calculate": "100 - datum.percentage_clean_water",
+    "as": "%_without_clean_water"
+  }
+],
+"mark": {"type" : "point", "stroke": "black", "strokeWidth":2},
+"encoding": {
+"longitude":{"field": "longitude", "type":"quantitative"},
+"latitude": {"field": "latitude", "type": "quantitative"},
+"size": {      
+  "field": "%_without_clean_water",      
+  "type": "quantitative",      
+  "title": "%_without_clean_water"
+},
+"color": {"value": "lightgreen"},
+
+"tooltip": [
+    {"field": "state", "type": "nominal", "title": "State"},
+    {"field": "%_without_clean_water", "type": "quantitative", "title": "% Without Clean Water", "format": ".2f"}
+  ]
+}
+
 }]
   }
