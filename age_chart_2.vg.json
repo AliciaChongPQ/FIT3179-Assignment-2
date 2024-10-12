@@ -1,0 +1,78 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "title": {"text":"Disease Rates by Age Groups",
+                    "fontSize": 18,
+                    "anchor": "middle",  
+                    "align": "center",
+                    "orient": "top"  
+                  },
+    
+    "padding": {"left": 1, "right": 15}, 
+    "data": {
+      "url": "https://raw.githubusercontent.com/AliciaChongPQ/FIT3179-Assignment-2/refs/heads/main/Disease_ages.csv"
+    },
+    "facet": {
+      "column": {
+        "field": "Disease",
+        "type": "nominal",
+        "header": null
+        }
+      }
+    ,
+    "spec": {
+      "mark": "circle",
+      "transform": [
+        {
+          "filter": "datum.Disease === 'Typhoid' || datum.Disease === 'Hepatitis A'"
+        }
+      ],
+      "encoding": {
+        "y": {
+          "field": "age_group",
+          "type": "nominal",
+          "sort": null,
+          "axis": {
+            "ticks": false,
+            "domain": false,
+            "title": "Age Group"
+          }
+        },
+        "size": {
+          "field": "normalised_incidence",
+          "type": "quantitative",
+          "scale": {
+            "type": "quantile",
+            "range": [50, 100, 250, 500,1000]
+          },
+          "legend": {
+            "title": "Normalized Incidence",
+            "columns" : 2
+          }
+        },
+        "color": {
+          "field": "Disease",
+          "type": "nominal",
+          "scale": {
+        "domain": ["Typhoid", "Hepatitis A"],
+        "range": ["purple", "skyblue"]  
+          },
+          "legend":null
+        },
+        "tooltip": [
+          {
+            "field": "age_group",
+            "type": "nominal",
+            "title": "Age Group"
+          },
+          {
+            "field": "normalised_incidence",
+            "type": "quantitative",
+            "title": "Cases Per 1M population"
+          }
+        ]
+      },
+      "width": 50,  
+      "height": 300
+    }
+  }
+  

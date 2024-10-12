@@ -1,46 +1,176 @@
 {
-    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-    "title": {
-      "text":"Incidence of Water-Borne Diseases in Malaysia (2018-2021)",
-      "fontSize": 18,
-      "anchor": "middle",  
-       "align": "center",
-       "orient": "top"  
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": {
+    "text": "Incidence of Water-Borne Diseases in Malaysia (2018-2021)",
+    "fontSize": 18,
+    "anchor": "middle",
+    "align": "center",
+    "orient": "top"
   },
-    "height": 400,
-    "width": 510,
-    "data": {
-      "url": "https://raw.githubusercontent.com/AliciaChongPQ/FIT3179-Assignment-2/refs/heads/main/diseases_by_year.csv"
-    },
-    "transform": [
+  "height": 400,
+  "width": 800,
+  "data": {
+    "url": "https://raw.githubusercontent.com/AliciaChongPQ/FIT3179-Assignment-2/refs/heads/main/diseases_by_year.csv"
+  },
+  "transform": [
     {
       "filter": {
         "field": "Disease",
-        "oneOf": ["Hepatitis A", "Typhoid"] 
+        "oneOf": ["Hepatitis A", "Typhoid"]
       }
     }
   ],
-    "mark": "line",
-    "encoding": {
-      "x": {
-        "field": "Year",
-        "type": "ordinal",
-        "title":"Year",
-        "axis": {
-            "labelFontSize": 14,  
-            "labelAngle": 0,
-            "titleFontSize": 16    
-          }
-      },
-      "y": {
-        "field": "Total Incidence",
-        "type": "quantitative",
-        "title": "#Cases",
-        "axis": {
+  "layer": [
+    {
+      "mark": {"type":"line"},
+      "encoding": {
+        "x": {
+          "field": "Year",
+          "type": "ordinal",
+          "title": "Year",
+          "axis": {
             "labelFontSize": 14,
-            "titleFontSize": 16 
+            "labelAngle": 0,
+            "titleFontSize": 16
           }
+        },
+        "y": {
+          "field": "Total Incidence",
+          "type": "quantitative",
+          "title": "Total Cases",
+          "axis": {
+            "labelFontSize": 14,
+            "titleFontSize": 16
+          }
+        },
+        "color": {
+          "field": "Disease",
+          "type": "nominal",
+          "title": "Disease",
+          "scale": {
+            "domain": ["Typhoid", "Hepatitis A"],
+            "range": ["purple", "skyblue"]
+          }
+        }
+      }
+    },
+    {
+      "transform":[
+        {"filter": "datum.Year === '2018'"}
+      ],
+      "mark": {
+        "type": "text",
+        "align": "left",
+        "dx": 5,  
+        "dy": 10 ,
+        "fontSize" : 16,
+        "fontWeight" : "bold"
       },
-      "color": {"field": "Disease", "type": "nominal", "title": "Disease", "legend": {"orient":"bottom-left", "labelFontSize": 14, "symbolSize": 300,"columns": 4,  "titleFontSize": 16 }}
-  }
-  }
+      "encoding": {
+        "x": {
+          "field": "Year",
+          "type": "ordinal"
+        },
+        "y": {
+          "field": "Total Incidence",
+          "type": "quantitative",
+          "axis": null
+        },
+        "text": {
+          "field": "Disease"
+        },
+        "color": {
+          "field": "Disease",
+          "type": "nominal",
+          "scale": {
+            "domain": ["Typhoid", "Hepatitis A"],
+            "range": ["purple", "skyblue"]
+          },
+          "legend": null
+        }
+      }
+    },
+    {
+      "transform": [
+        {"filter": "datum.Year === '2020'"},
+        {"calculate": "datum.Total_Incidence + 47",
+      "as":"calculated"}
+      ],
+      "mark": {
+        "type": "bar",
+        "color": "grey",
+        "width": 3,
+        "opacity": 0.3
+      },
+      "encoding": {
+        "x": {
+          "field": "Year"
+        },
+        "y": {
+          "field": "calculated",
+          "axis": null
+        }
+      }
+    },
+    {
+      "transform": [
+        { "filter": "datum.Year === '2020'" }
+      ],
+      "mark": {
+        "type": "text",
+        "align": "left",
+        "dx": 10,  
+        "dy": 100, 
+        "fontSize": 12,
+        "fontWeight": "bold",
+        "color":"grey"
+      },
+      "encoding": {
+        "x": {
+          "field": "Year",
+          "type": "ordinal"
+        },
+        "y": {
+          "aggregate": "mean", 
+          "field": "Total Incidence",
+          "axis": null
+        },
+        "text": {
+          "value": "Start of COVID-19 Pandemic" 
+        }
+      }
+    },
+    {
+      "mark": {"type":"circle",
+              "size":200,
+              "opacity": 1
+            },
+      "encoding": {
+        "x": {
+          "field": "Year",
+          "type": "ordinal",
+          "title": "Year"
+        },
+        "y": {
+          "field": "Total Incidence",
+          "type": "quantitative",
+          "axis": null
+        },
+        "color": {
+          "field": "Disease",
+          "type": "nominal",
+          "title": "Disease",
+          "scale": {
+            "domain": ["Typhoid", "Hepatitis A"],
+            "range": ["purple", "skyblue"]
+          }
+        },
+        "tooltip":[
+          {"field": "Total Incidence", "title": "Total Cases"},
+          {"field": "Disease", "title":"Disease"},
+          {"field": "Year"}
+        ]
+      }
+    }
+  ]
+}

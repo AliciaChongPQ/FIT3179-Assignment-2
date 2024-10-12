@@ -1,6 +1,5 @@
 {
     "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-    "description": "Butterfly chart: Participation Rate (left) and Unemployment Rate (right) by state in 2022.",
     "data": { "url": "https://raw.githubusercontent.com/AliciaChongPQ/FIT3179-Assignment-2/refs/heads/main/diseases_per_1M.csv" },
     "transform": [
       {

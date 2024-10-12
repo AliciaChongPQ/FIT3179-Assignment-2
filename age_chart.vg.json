@@ -1,90 +1,60 @@
 {
-    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-    "description": "Horizontally concatenated charts that show different types of discretizing scales.",
-    "data": {
-      "url": "https://raw.githubusercontent.com/AliciaChongPQ/FIT3179-Assignment-2/refs/heads/main/bilangan%20kes%20penyakit%20hepatitis%20a%20tahunan%20mengikut.csv"
-    },
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": {"text":"Disease Rates by Age Groups",
+                  "fontSize": 18,
+                  "anchor": "middle",  
+                  "align": "center",
+                  "orient": "top"  
+                },
+  
+  "padding": {"left": 1, "right": 10, "top": 10, "bottom": 10}, 
+  "data": {
+    "url": "https://raw.githubusercontent.com/AliciaChongPQ/FIT3179-Assignment-2/refs/heads/main/Disease_ages.csv"
+  },
+  "facet": {
+    "column": {
+      "field": "Disease",
+      "type": "nominal",
+      "header": null
+      }
+    }
+  ,
+  "spec": {
+    "mark": {"type":"square", "size":350},
     "transform": [
       {
-        "calculate": "sum()"
+        "filter": "datum.Disease === 'Typhoid' || datum.Disease === 'Hepatitis A'"
       }
-    ]
-    "hconcat": [
-      {
-        "mark": "circle",
-        "encoding": {
-          "y": {
-            "field": "KUMPULAN UMUR",
-            "type": "nominal",
-            "sort": null,
-            "axis": {
-              "ticks": false,
-              "domain": false,
-              "title": null
-            }
-          },
-          "size": {
-            "field": "b",
-            "type": "quantitative",
-            "scale": {
-              "type": "quantize"
-            }
-          },
-          "color": {
-            "field": "b",
-            "type": "quantitative",
-            "scale": {
-              "type": "quantize",
-              "zero": true
-            },
-            "legend": {
-              "title": "Quantize"
-            }
-          }
+    ],
+    "encoding": {
+      "y": {
+        "field": "age_group",
+        "type": "nominal",
+        "sort": null,
+        "axis": {
+          "ticks": false,
+          "domain": false,
+          "title": "Age Group"
         }
       },
       
-      {
-        "mark": "circle",
-        "encoding": {
-          "y": {
-            "field": "b",
-            "type": "nominal",
-            "sort": null,
-            "axis": {
-              "ticks": false,
-              "domain": false,
-              "title": null
-            }
-          },
-          "size": {
-            "field": "b",
-            "type": "quantitative",
-            "scale": {
-              "type": "threshold",
-              "domain": [30, 70],
-              "range": [80, 200, 320]
-            }
-          },
-          "color": {
-            "field": "b",
-            "type": "quantitative",
-            "scale": {
-              "type": "threshold",
-              "domain": [30, 70],
-              "scheme": "viridis"
-            },
-            "legend": {
-              "title": "Threshold"
-            }
-          }
+      "color": {
+        "field": "normalised_incidence",
+        "type": "quantitative",
+        "legend":null
+      },
+      "tooltip": [
+        {
+          "field": "age_group",
+          "type": "nominal",
+          "title": "Age Group"
+        },
+        {
+          "field": "normalised_incidence",
+          "type": "quantitative",
+          "title": "Cases Per 1M population"
         }
-      }
-    ],
-    "resolve": {
-      "scale": {
-        "color": "independent",
-        "size": "independent"
-      }
+      ]
     }
   }
+}
