@@ -36,7 +36,7 @@
         "title": "Percentage of Houses without Clean Water (%)"
       },
       "size": {"field": "total_disease_incidence_rate", "type": "quantitative", "scale": {"type": "log", "range": [100, 2000]}, "title": "Total Incidence rate of Typhoid, Malaria and Hepatitis A"},
-      "color": {"field": "water_supply_interruption_per_1M", "type": "quantitative", "scale": {"type": "log"}, "title": "water_supply_interruption_per_1M"},
+      "color": {"field": "total_disease_incidence_rate", "type": "quantitative", "scale": {"type": "linear","domain" : [0, 100, 1000, 2000],"range": ["#f7e0df","#c74940", "#992820", "#570c07"] }, "title": "total_disease_incidence_rate"},
       "tooltip": [
         {"field": "State", "type": "nominal"},
         {"field": "water_treatment_plant_per_kms", "type": "quantitative", "title": "Number of Water Treatment Plants per KM^2"},

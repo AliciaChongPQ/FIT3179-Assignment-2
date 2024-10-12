@@ -10,9 +10,9 @@
     "width": 1200,
     "height": 600,
     "projection": {"type": "equalEarth",
-                    "scale":2600,
+                    "scale":3400,
                     "center": [110.3, -1],
-                    "translate": [440, 490]},
+                    "translate": [680, 600]},
     "params" :[
       {
         "name" : "disease",
@@ -66,7 +66,7 @@
           "domain" : [0, 15, 30, 60],
           "range": ["#f7e0df","#c74940", "#992820", "#570c07"] 
         },
-        "title": "Incidence Per 1M Population",
+        "title": "Cases Per 1M Population",
         "legend": {
           "orient": "bottom-left",
           "labelFontSize": 14,
@@ -111,7 +111,7 @@
       "range": ["#f7e0df","#c74940", "#992820", "#570c07"]
     },
   
-    "title": "Incidence Per 1M Population",
+    "title": "Cases Per 1M Population",
     "legend": {
       "orient": "bottom-left",
       "labelFontSize": 14,

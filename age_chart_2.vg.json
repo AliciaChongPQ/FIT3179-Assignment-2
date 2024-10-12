@@ -67,7 +67,8 @@
           {
             "field": "normalised_incidence",
             "type": "quantitative",
-            "title": "Cases Per 1M population"
+            "title": "Cases Per 1M population",
+            "format": ".2f"
           }
         ]
       },
