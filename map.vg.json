@@ -64,7 +64,7 @@
         "scale": {
           "type": "linear",
           "domain" : [0, 15, 30, 60],
-          "range": ["#f7e0df","#c74940", "#992820", "#570c07"] 
+          "range": ["#fac8c8","#a15555", "#965656", "#783636"]
         },
         "title": "Cases Per 1M Population",
         "legend": {
@@ -108,7 +108,7 @@
     "scale": {
       "type": "linear",
       "domain" : [0, 15, 30, 60],
-      "range": ["#f7e0df","#c74940", "#992820", "#570c07"]
+      "range": ["#fac8c8","#c28282", "#965656", "#783636"]
     },
   
     "title": "Cases Per 1M Population",
@@ -163,54 +163,16 @@
 {
   "data": {
     "values": [
-      {"state": "\\", "latitude": 5.55, "longitude": 115.0}
+      {"state": "Many rural and remote areas in Sabah lack", "latitude": 6.50, "longitude": 113.2000},
+      {"state": "reliable access to clean and safe water", "latitude": 6.30, "longitude": 113.4000},
+      {"state": "Typhoid vaccines, while available, are less commonly", "latitude": 4.50, "longitude": 107.0753},
+      {"state": "administered and tend to be given only to high-risk groups", "latitude": 4.30, "longitude":107.0753},
+      {"state": "or travelers, making Typhoid harder to control.", "latitude": 4.10, "longitude":107.0753}
     ]
   },
   "mark": {
     "type": "text",
-    "color": "black",
-    "fontWeight": "bold",
-    "fontSize": 40,
-    "dx": 5,
-    "dy": -5
-  },
-  "encoding": {
-    "longitude": {"field": "longitude", "type": "quantitative"},
-    "latitude": {"field": "latitude", "type": "quantitative"},
-    "text": {"field": "state", "type": "nominal"}
-  }
-},
-{
-  "data": {
-    "values": [
-      {"state": "---", "latitude": 6.05, "longitude": 112.5},
-      {"state": "----", "latitude": 6.05, "longitude": 113.0}
-    ]
-  },
-  "mark": {
-    "type": "text",
-    "color": "lightyellow",
-    "fontWeight": "bold",
-    "fontSize": 190,
-    "dx": 5,
-    "dy": -5
-  },
-  "encoding": {
-    "longitude": {"field": "longitude", "type": "quantitative"},
-    "latitude": {"field": "latitude", "type": "quantitative"},
-    "text": {"field": "state", "type": "nominal"}
-  }
-},
-{
-  "data": {
-    "values": [
-      {"state": "Sabah sees the highest rate of both ", "latitude": 6.00, "longitude": 113.0753},
-      {"state": "diseases compared to other States", "latitude": 5.80, "longitude": 113.0753}
-    ]
-  },
-  "mark": {
-    "type": "text",
-    "color": "black",
+    "color": "grey",
     "fontWeight": "bold",
     "fontSize": 12,
     "dx": 5,
@@ -219,7 +181,44 @@
   "encoding": {
     "longitude": {"field": "longitude", "type": "quantitative"},
     "latitude": {"field": "latitude", "type": "quantitative"},
-    "text": {"field": "state", "type": "nominal"}
+    "text": {"field": "state", "type": "nominal"},
+    "opacity": {
+        "condition": {
+          "test": "disease === 'typhoid normalized'",
+          "value": 1
+        },
+        "value": 0
+      }
+  }
+}, 
+{
+  "data": {
+    "values": [
+      {"state": "Hepatitis A vaccines have been available and widely used in", "latitude": 4.50, "longitude": 108.2753},
+      {"state": "many countries,  including Malaysia.  Significantly reducing", "latitude": 4.30, "longitude": 108.2753},
+      {"state": "incidence  of  Hepatitis A  by providing  long-term immunity.", "latitude": 4.10, "longitude": 108.2753}
+
+    ]
+  },
+  "mark": {
+    "type": "text",
+    "color": "grey",
+    "fontWeight": "bold",
+    "fontSize": 12,
+    "dx": 5,
+    "dy": -5
+  },
+  "encoding": {
+    "longitude": {"field": "longitude", "type": "quantitative"},
+    "latitude": {"field": "latitude", "type": "quantitative"},
+    "text": {"field": "state", "type": "nominal"},
+    "opacity": {
+        "condition": {
+          "test": "disease === 'hepatitis A normalized'",
+          "value": 1
+        },
+        "value": 0
+      }
   }
 }, 
 
@@ -302,7 +301,7 @@
 "size": {      
   "field": "%_without_clean_water",      
   "type": "quantitative",    
-  "title": "%_without_clean_water",
+  "title": "% Houses without Clean Water",
   "legend": {
     "orient": "bottom-right",
     "labelFontSize": 12,
@@ -310,7 +309,8 @@
     "columns":6
   } ,
   "scale": {
-        "range": [10, 700] 
+    "type": "linear",
+        "range": [10, 800] 
       }
 },
 

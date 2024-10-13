@@ -49,7 +49,7 @@
           "title": "Disease",
           "scale": {
             "domain": ["Typhoid", "Hepatitis A"],
-            "range": ["purple", "skyblue"]
+            "range": ["#755a85", "#6e889c"]
           }
         }
       }
@@ -84,7 +84,7 @@
           "type": "nominal",
           "scale": {
             "domain": ["Typhoid", "Hepatitis A"],
-            "range": ["purple", "skyblue"]
+            "range": ["#755a85", "#6e889c"]
           },
           "legend": null
         }
@@ -162,7 +162,7 @@
           "title": "Disease",
           "scale": {
             "domain": ["Typhoid", "Hepatitis A"],
-            "range": ["purple", "skyblue"]
+            "range": ["#755a85", "6e889c"]
           }
         },
         "tooltip":[

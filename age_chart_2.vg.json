@@ -20,7 +20,7 @@
       }
     ,
     "spec": {
-      "mark": "circle",
+      "mark": {"type":"circle", "opacity": 0.6, "stroke":"black"},
       "transform": [
         {
           "filter": "datum.Disease === 'Typhoid' || datum.Disease === 'Hepatitis A'"
@@ -42,7 +42,7 @@
           "type": "quantitative",
           "scale": {
             "type": "quantile",
-            "range": [50, 100, 250, 500,1000]
+            "range": [50, 100 ,500,1000,2000]
           },
           "legend": {
             "title": "Normalized Incidence",
@@ -54,7 +54,7 @@
           "type": "nominal",
           "scale": {
         "domain": ["Typhoid", "Hepatitis A"],
-        "range": ["purple", "skyblue"]  
+        "range": ["#755a85", "#6e889c"]  
           },
           "legend":null
         },

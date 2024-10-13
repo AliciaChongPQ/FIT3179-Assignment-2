@@ -20,29 +20,149 @@
       {
         "calculate": "datum.water_qualiy_complaints / datum.population",
         "as":"water_qualiy_complaints_per_1M"
+      },
+      {
+        "calculate": "datum.expenditure_water / datum.population",
+        "as": "expenditure_water_population"
+      },
+      {
+        "calculate": "datum.expenditure_water / datum.size",
+        "as": "expenditure_water_size"
       }
     ],
-    
-    "mark": "circle",
-    "encoding": {
-      "x": {
-        "field": "percentage_houses_without_clean_water",
-        "type": "quantitative",
-        "title":"water_supply_interruption_per_1M"
+    "layer": [{
+      "mark": {"type":"circle", "opacity":1, "stroke":"black", "strokeWidth": 1},
+      "encoding": {
+        "x": {
+          "field": "expenditure_water_population",
+          "type": "quantitative",
+          "title":"expenditure_water_population",
+          "axis": { "grid": false , "ticks":false} 
+        },
+        "y": {
+          "field": "percentage_houses_without_clean_water",
+          "type": "quantitative",
+          "title": "Percentage of Houses without Clean Water (%)",
+          "axis": { "grid": false ,"ticks":false} 
+        },
+        "size": {"field": "water_supply_interruption", "type": "quantitative", "scale": {"type": "log", "range": [100, 2000]}, "title": "expenditure_water_size"},
+        "color": {"field": "total_disease_incidence_rate", "type": "quantitative", "scale": {"type": "linear","domain" : [0, 25, 50, 100],"range": ["#f7e0df","#c74940", "#992820", "#570c07"] }, "title": "total_disease_incidence_rate"},
+        "tooltip": [
+          {"field": "State", "type": "nominal"},
+          {"field": "water_treatment_plant_per_kms", "type": "quantitative", "title": "Number of Water Treatment Plants per KM^2"},
+          {"field": "percentage_houses_without_clean_water", "type": "quantitative", "title": "Percentage of Houses without Clean Water"},
+          {"field": "total_disease_incidence_rate", "type": "quantitative", "title": "Total Incidence rate of Typhoid, Malaria and Hepatitis A"},
+          {"field": "water_supply_interruption_per_1M", "type": "quantitative", "format": ",", "title": "water_supply_interruption_per_1M"}
+        ]
+        }
       },
-      "y": {
-        "field": "percentage_houses_without_clean_water",
-        "type": "quantitative",
-        "title": "Percentage of Houses without Clean Water (%)"
+      {
+          "transform":[
+            {"filter": "datum.State === 'Selangor' || datum.State === 'Kelantan' || datum.State === 'Sarawak'  || datum.State === 'Negeri Sembilan'"}
+          ],
+          "mark": {
+            "type": "text",
+            "align": "left",
+            "dx": -20,  
+            "dy": 30 ,
+            "fontSize" : 12,
+            "fontWeight" : "bold"
+          },
+          "encoding": {
+            "x": {
+              "field": "expenditure_water_population",
+              "type": "quantitative"
+            },
+            "y": {
+              "field": "percentage_houses_without_clean_water",
+              "type": "quantitative"
+            },
+            "text": {
+              "field": "State"
+            }
+        
+        }
       },
-      "size": {"field": "total_disease_incidence_rate", "type": "quantitative", "scale": {"type": "log", "range": [100, 2000]}, "title": "Total Incidence rate of Typhoid, Malaria and Hepatitis A"},
-      "color": {"field": "total_disease_incidence_rate", "type": "quantitative", "scale": {"type": "linear","domain" : [0, 25, 50, 100],"range": ["#f7e0df","#c74940", "#992820", "#570c07"] }, "title": "total_disease_incidence_rate"},
-      "tooltip": [
-        {"field": "State", "type": "nominal"},
-        {"field": "water_treatment_plant_per_kms", "type": "quantitative", "title": "Number of Water Treatment Plants per KM^2"},
-        {"field": "percentage_houses_without_clean_water", "type": "quantitative", "title": "Percentage of Houses without Clean Water"},
-        {"field": "total_disease_incidence_rate", "type": "quantitative", "title": "Total Incidence rate of Typhoid, Malaria and Hepatitis A"},
-        {"field": "water_supply_interruption_per_1M", "type": "quantitative", "format": ",", "title": "water_supply_interruption_per_1M"}
-      ]
-  }
+      {
+          "transform":[
+            {"filter": "datum.State === 'Sabah' "}
+          ],
+          "mark": {
+            "type": "text",
+            "align": "left",
+            "dx": -20,  
+            "dy": -30 ,
+            "fontSize" : 12,
+            "fontWeight" : "bold"
+          },
+          "encoding": {
+            "x": {
+              "field": "expenditure_water_population",
+              "type": "quantitative"
+            },
+            "y": {
+              "field": "percentage_houses_without_clean_water",
+              "type": "quantitative"
+            },
+            "text": {
+              "field": "State"
+            }
+        
+        }
+      },
+      {
+          "transform":[
+            {"filter": "datum.State === 'Johor' || datum.State === 'Melaka'"}
+          ],
+          "mark": {
+            "type": "text",
+            "align": "left",
+            "dx": -20,  
+            "dy": -20 ,
+            "fontSize" : 12,
+            "fontWeight" : "bold"
+          },
+          "encoding": {
+            "x": {
+              "field": "expenditure_water_population",
+              "type": "quantitative"
+            },
+            "y": {
+              "field": "percentage_houses_without_clean_water",
+              "type": "quantitative"
+            },
+            "text": {
+              "field": "State"
+            }
+        
+        }
+      },
+      {
+          "transform":[
+            {"filter": "datum.State === 'Terengganu'"}
+          ],
+          "mark": {
+            "type": "text",
+            "align": "left",
+            "dx": -40,  
+            "dy": 15 ,
+            "fontSize" : 12,
+            "fontWeight" : "bold"
+          },
+          "encoding": {
+            "x": {
+              "field": "expenditure_water_population",
+              "type": "quantitative"
+            },
+            "y": {
+              "field": "percentage_houses_without_clean_water",
+              "type": "quantitative"
+            },
+            "text": {
+              "field": "State"
+            }
+        
+        }
+      }
+  ]
   }

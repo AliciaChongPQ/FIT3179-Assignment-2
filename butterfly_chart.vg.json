@@ -11,8 +11,28 @@
         "as": "abs_water_treatment_plants"
       },
       {
+        "calculate": "-datum.expenditure_water/datum.size",
+        "as": "neg_water_treatment_plants"
+      },
+      {
+        "calculate": "abs(datum.water_treatment_plants)",
+        "as": "abs_water_treatment_plants"
+      },
+      {
         "calculate": "100 - datum.percentage_clean_water",
         "as": "percnt_house_wout_clean_water"
+      },
+      {
+        "calculate": "-datum.water_qualiy_complaints/datum.population",
+        "as": "neg_water_qualiy_complaints_population"
+      },
+      {
+        "calculate": "abs(datum.water_qualiy_complaints)/datum.population",
+        "as": "abs_water_qualiy_complaints_population"
+      },
+      {
+        "calculate": "datum.water_supply_interruption/datum.population",
+        "as": "water_supply_interruption_population"
       },
     
       {"filter": "datum.percnt_house_wout_clean_water < 100"}
@@ -20,59 +40,69 @@
     "spacing": 0,
     "hconcat": [
       {
-        "title": "Number of Water Treatment Plants in State",
-        "mark": "bar",
+        "title": {"text":"Water Quality Complaints and", "anchor": "end",  "fontSize": 16},
+        "width": 538,
+        "height": 400,
+        "mark":  {"type":"bar"},
         "encoding": {
           "y": {
             "field": "State",
             "type": "nominal",
             "axis": null,
-            "sort":"-x"
+            "sort":{"field":"total_disease_incidence_rate", "order":"descending"}
           },
           "x": {
-            "field": "neg_water_treatment_plants",
+            "field": "neg_water_qualiy_complaints_population",
             "type":"quantitative",
-            "title": null,
+            "title": "Water Quality Complaints",
             "axis": {"labelExpr": "abs(datum.value)", "format": ".4f"}
           },
           "tooltip": [
             {"field": "State"},
-            {"field": "abs_water_treatment_plants", "title": "abs_water_treatment_plants", "format": ".4f"}
+            {"field": "abs_water_qualiy_complaints_population", "title": "Complaints per 1M population", "format": ".2f"},
+            {"field":"total_disease_incidence_rate", "title" : "Total Incidence rate of Typhoid and Hepatitis A", "format":".2f" }
           ],
-          "color": {"value": "#675193"}
+          "color": {"value": "#59755c"}
         }
       },
       {
-        "width": 50,
+        "height": 400,
+        
         "view": {"stroke": null},
+        "title": {"text":"Water Supply", "anchor": "middle",  "fontSize": 16},
         "mark": {
           "type": "text",
-          "align": "center"
+          "align": "center",
+          "size":15
         },
         "encoding": {
-          "y": {"field": "State", "type": "ordinal", "axis":null, "sort": "ascending"},  
+          "y": {"field": "State", "type": "ordinal", "axis":null, "sort":{"field":"total_disease_incidence_rate", "order":"descending"}},  
         "text": {"field": "State", "type": "nominal"}
         }
       },
       {
-        "title": "Percentage of Houses without Clean Water",
-        "mark": "bar",
+        "title": {"text":" Interruptions per 1M Population", "anchor": "start", "fontSize": 16},
+        "width": 538,
+        "height": 400,
+        "mark": {"type":"bar", "width":10},
         "encoding": {
           "y": {
             "field": "State",
-            "axis": null
+            "axis": null,
+            "sort":{"field":"total_disease_incidence_rate", "order":"descending"}
           },
           "x": {
-            "field": "percnt_house_wout_clean_water",
+            "field": "water_supply_interruption_population",
             "type" :"quantitative",
-            "title": null,
-            "axis": {"format": ".2f"}
+            "title": "Water Supply Interruptions",
+            "axis": {"format": ".0f"}
           },
           "tooltip": [
             {"field": "State"},
-            {"field": "percnt_house_wout_clean_water", "title": "percnt_house_wout_clean_water", "format": ".2f"}
+            {"field": "water_supply_interruption_population", "title": "Complaints per 1M population", "format": ".2f"},
+            {"field":"total_disease_incidence_rate", "title" : "Total Incidence rate of Typhoid and Hepatitis A", "format":".2f" }
           ],
-          "color": {"value": "#ca8861"}
+          "color": {"value": "#59755c"}
         }
       }
     ],
