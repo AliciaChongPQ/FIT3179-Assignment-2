@@ -70,29 +70,48 @@
             
             <div class="pure-g">
                 <div class = "pure-u-1-1">
-                    <div id = "butterfly" class = "vis-container2"></div>
+                    <div id = "butterfly" class = "vis-container"></div>
                 </div>
             </div>
             <div class = "pure-g">
                 <div class="pure-u-1-2" style="width: 600px">
                     <div class="description description2">
-                        <p>Water quality complaints may arise from unsafe drinking water, which could contain harmful pathogens, 
-                            including those that cause typhoid. Poor water treatment infrastructure, unclean water distribution systems, 
-                            or inadequate filtering can contribute to contamination.</p>
+                        <p><strong style="color: #59755c;">Water quality complaints</strong> may arise from unsafe drinking water, which could contain harmful pathogens, 
+                            including those that cause typhoid. <strong>Poor water treatment infrastructure, unclean water distribution systems, 
+                            or inadequate filtering</strong> can contribute to contamination.</p>
                       </div>
                 </div>
                 <div class = "pure-u-1-2" style="width:600px">
-                    <div class="description2">
-                        <p>When water supply is interrupted, people may be forced to resort to unsafe alternative water sources, 
-                            increasing their exposure to contaminated water. Interruption in water supply can also 
-                            disrupt hygiene practices, such as regular handwashing, which is critical in preventing the 
-                            spread of both diseases.</p>
+                    <div class="description description2">
+                        <p>When water supply is interrupted, people resort to unsafe alternative water sources, 
+                            increasing their exposure to contaminated water. <strong style = "color: #ad7134;">Interruption in water supply</strong> can also 
+                            <strong>disrupt hygiene practices</strong>, such as regular handwashing, which is critical in preventing the 
+                            spread of diseases.</p>
                     </div>
                 </div>
             </div>
             <div class="pure-g">
-                <div class = "pure-u-1-1"  style = "width: 400px;">
-                    <div id = "bubble_2" class = "vis-container2" style= "width : 400px;"></div>
+                <div class = "pure-u-1-1"  style = "width: 100%;">
+                    <div id = "bubble_3" class = "vis-container"></div>
+                    
+                </div>
+                <div class="pure-u-1-2" style="width: 600px;">
+                    <div class="description description2">
+                        <strong style="color:#6e889c; font-size: 20px;">TYPHOID:</strong> 
+                        <p><strong>Children</strong> are particularly vulnerable to typhoid because of weaker immune systems. They often face more severe symptoms like high fever, diarrhea, and potential complications if not treated promptly.</p>
+                        <p><strong>Adults</strong> may have partial immunity due to prior exposure to the disease, especially in endemic areas, leading to milder symptoms.</p>
+                        <p><strong>Elderlies</strong> may suffer more severe complications due to underlying health conditions and weakened immune responses.</p>
+                    </div>
+                </div>
+                <div class="pure-u-1-2" style="width: 600px;">
+                    <div class="description description2">
+                        <strong style="color:#755a85; font-size: 20px;">HEPATITIS A:</strong>
+                        <p><strong>Children</strong> often have milder or asymptomatic cases of hepatitis A, with many not showing symptoms at all.
+                            Despite this, they are efficient spreaders of the virus, as they may unknowingly transmit it to others.</p>
+                        <p><strong>Adults</strong> are more likely to experience severe symptoms. Jaundice, extreme fatigue, and liver inflammation are more common.</p>
+                        <p><strong>Elderlies</strong> may experience a longer recovery time and are more prone to complications such as liver failure.</p>
+                    </div>
+                      
                 </div>
             </div>
     </div>
@@ -112,12 +131,14 @@
         var specVis3 = "./line_chart1.vg.json";
         var specVis4 = "./age_chart_2.vg.json";
         var specVis5 = "./butterfly_chart.vg.json";
+        var specVis6 = "./age_chart_3.vg.json";
 
         vegaEmbed('#map1', specVis1, {"actions":false});
         vegaEmbed('#bubble_plot', specVis2, {"actions":false});
         vegaEmbed('#linechart1', specVis3, {"actions": false});
         vegaEmbed('#bubble_2', specVis4, {"actions":false});
         vegaEmbed('#butterfly', specVis5, {"actions":false});
+        vegaEmbed('#bubble_3', specVis6,{"actions":false});
     </script>
 </body>
 

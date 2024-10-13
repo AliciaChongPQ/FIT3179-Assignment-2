@@ -38,6 +38,7 @@
       {"filter": "datum.percnt_house_wout_clean_water < 100"}
     ],
     "spacing": 0,
+    
     "hconcat": [
       {
         "title": {"text":"Water Quality Complaints and", "anchor": "end",  "fontSize": 16},
@@ -102,7 +103,7 @@
             {"field": "water_supply_interruption_population", "title": "Complaints per 1M population", "format": ".2f"},
             {"field":"total_disease_incidence_rate", "title" : "Total Incidence rate of Typhoid and Hepatitis A", "format":".2f" }
           ],
-          "color": {"value": "#59755c"}
+          "color": {"value": "#ad7134"}
         }
       }
     ],

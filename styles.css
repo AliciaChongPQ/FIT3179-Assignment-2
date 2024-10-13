@@ -103,8 +103,6 @@ body {
 .description2 {
     padding-left: 20px;
     padding-right: 20px;
-    padding-bottom:20px;
+    padding-bottom:50px;
     padding-top: 12px;
-    border-radius: 15px;  
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);  
 }

@@ -12,7 +12,7 @@
       "url": "https://raw.githubusercontent.com/AliciaChongPQ/FIT3179-Assignment-2/refs/heads/main/Disease_ages.csv"
     },
     "facet": {
-      "column": {
+      "row": {
         "field": "Disease",
         "type": "nominal",
         "header":{
@@ -23,6 +23,7 @@
       }
     ,
     "spec": {
+        
       "mark": {"type":"circle", "opacity": 0.6, "stroke":"black"},
       "transform": [
         {
@@ -30,14 +31,15 @@
         }
       ],
       "encoding": {
-        "y": {
+        "x": {
           "field": "age_group",
           "type": "nominal",
           "sort": null,
           "axis": {
             "ticks": false,
             "domain": false,
-            "title": "Age Group"
+            "title": "Age Group",
+            "labelAngle": 0  
           }
         },
         "size": {
@@ -46,7 +48,7 @@
           "scale": {
             "type": "threshold",
             "domain": [5,10,15,20],
-            "range": [50, 250 ,500,1000,2000]
+            "range": [750, 2000,5000,7500,10000]
           },
           "legend": {
             "title": "Cases per 1M Population",
@@ -76,8 +78,8 @@
           }
         ]
       },
-      "width": 50,  
-      "height": 300
+      "width": 850,  
+      "height": 150
     }
   }
   
