@@ -1,5 +1,6 @@
 {
     "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "background":"#f9f9f9",
     "data": { "url": "https://raw.githubusercontent.com/AliciaChongPQ/FIT3179-Assignment-2/refs/heads/main/diseases_per_1M.csv" },
     "transform": [
       {

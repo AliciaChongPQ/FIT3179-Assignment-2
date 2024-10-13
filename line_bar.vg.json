@@ -1,0 +1,50 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "width": 1125,
+  "height": 600,
+  "data": {
+    "url": "https://raw.githubusercontent.com/AliciaChongPQ/FIT3179-Assignment-2/refs/heads/main/diseases_per_1M.csv"
+  },
+  "layer": [
+    {
+      "mark": "line",
+      "encoding": {
+        "x": {
+          "field": "State",
+          "type": "nominal",
+          "axis": {"labelAngle": 0},
+          "sort": {"field":"total_disease_incidence_rate", "order":"ascending"}
+        },
+        "y": {
+          "field": "total_disease_incidence_rate",
+          "type": "quantitative",
+          "axis": {"labelAngle":0}
+        },
+        "tooltip": [
+          {"field": "State", "title": "State"},
+          {"field": "total_disease_incidence_rate", "title": "Total Disease Incidence Rate"}
+        ]
+      }
+    },
+    {
+      "mark": "line",
+      "encoding": {
+        "x": {
+          "field": "State",
+          "type": "nominal",
+          "axis": {"labelAngle": 0},
+          "sort": {"field":"total_disease_incidence_rate", "order":"ascending"}
+        },
+        "y": {
+          "field": "total_disease_incidence_rate",
+          "type": "quantitative",
+          "axis": {"labelAngle":0}
+        },
+        "tooltip": [
+          {"field": "State", "title": "State"},
+          {"field": "total_disease_incidence_rate", "title": "Total Disease Incidence Rate"}
+        ]
+      }
+    }
+  ]
+}

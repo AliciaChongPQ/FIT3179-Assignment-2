@@ -1,0 +1,21 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "title":"none",
+    "data":{"url": "https://raw.githubusercontent.com/AliciaChongPQ/FIT3179-Assignment-2/refs/heads/main/diseases_per_1M.csv"},
+    "vconcat": [
+        {
+            "mark":"rect",
+            "encoding": {
+                "x":{"field":"State","type":"nominal", "sort":{"field":"total_disease_incidence_rate"}},
+                "color":{"field":"percentage_houses_without_clean_water", "type": "quantitative","scale":{"type": "linear", "range":[0,10]}}
+            }
+        },
+        {
+            "mark":"rect",
+            "encoding": {
+                "x":{"field":"State","type":"nominal", "sort":{"field":"total_disease_incidence_rate"}},
+                "color":{"field":"water_treatment_plant_per_kms", "type": "quantitative","scale":{"type": "linear", "range":[0,1]}}
+            }
+        }
+    ]
+}

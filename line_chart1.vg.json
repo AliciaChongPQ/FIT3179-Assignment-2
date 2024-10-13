@@ -9,6 +9,7 @@
   },
   "height": 400,
   "width": 800,
+  "background":"#f9f9f9",
   "data": {
     "url": "https://raw.githubusercontent.com/AliciaChongPQ/FIT3179-Assignment-2/refs/heads/main/diseases_by_year.csv"
   },

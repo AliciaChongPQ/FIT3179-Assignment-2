@@ -7,6 +7,7 @@
        "align": "center",
        "orient": "top"  
   },
+  "background":"#f9f9f9",
     "height": 400,
     "width": 500,
     "data": {
@@ -34,9 +35,9 @@
       "mark": {"type":"circle", "opacity":1, "stroke":"black", "strokeWidth": 1},
       "encoding": {
         "x": {
-          "field": "expenditure_water_population",
+          "field": "total_disease_incidence_rate",
           "type": "quantitative",
-          "title":"expenditure_water_population",
+          "title":"total_disease_incidence_rate",
           "axis": { "grid": false , "ticks":false} 
         },
         "y": {
@@ -45,7 +46,7 @@
           "title": "Percentage of Houses without Clean Water (%)",
           "axis": { "grid": false ,"ticks":false} 
         },
-        "size": {"field": "water_supply_interruption", "type": "quantitative", "scale": {"type": "log", "range": [100, 2000]}, "title": "expenditure_water_size"},
+        "size":{ "field":"expenditure_water_size", "scale":{"type": "linear", "range":[100,1000]}},
         "color": {"field": "total_disease_incidence_rate", "type": "quantitative", "scale": {"type": "linear","domain" : [0, 25, 50, 100],"range": ["#f7e0df","#c74940", "#992820", "#570c07"] }, "title": "total_disease_incidence_rate"},
         "tooltip": [
           {"field": "State", "type": "nominal"},
@@ -54,114 +55,6 @@
           {"field": "total_disease_incidence_rate", "type": "quantitative", "title": "Total Incidence rate of Typhoid, Malaria and Hepatitis A"},
           {"field": "water_supply_interruption_per_1M", "type": "quantitative", "format": ",", "title": "water_supply_interruption_per_1M"}
         ]
-        }
-      },
-      {
-          "transform":[
-            {"filter": "datum.State === 'Selangor' || datum.State === 'Kelantan' || datum.State === 'Sarawak'  || datum.State === 'Negeri Sembilan'"}
-          ],
-          "mark": {
-            "type": "text",
-            "align": "left",
-            "dx": -20,  
-            "dy": 30 ,
-            "fontSize" : 12,
-            "fontWeight" : "bold"
-          },
-          "encoding": {
-            "x": {
-              "field": "expenditure_water_population",
-              "type": "quantitative"
-            },
-            "y": {
-              "field": "percentage_houses_without_clean_water",
-              "type": "quantitative"
-            },
-            "text": {
-              "field": "State"
-            }
-        
-        }
-      },
-      {
-          "transform":[
-            {"filter": "datum.State === 'Sabah' "}
-          ],
-          "mark": {
-            "type": "text",
-            "align": "left",
-            "dx": -20,  
-            "dy": -30 ,
-            "fontSize" : 12,
-            "fontWeight" : "bold"
-          },
-          "encoding": {
-            "x": {
-              "field": "expenditure_water_population",
-              "type": "quantitative"
-            },
-            "y": {
-              "field": "percentage_houses_without_clean_water",
-              "type": "quantitative"
-            },
-            "text": {
-              "field": "State"
-            }
-        
-        }
-      },
-      {
-          "transform":[
-            {"filter": "datum.State === 'Johor' || datum.State === 'Melaka'"}
-          ],
-          "mark": {
-            "type": "text",
-            "align": "left",
-            "dx": -20,  
-            "dy": -20 ,
-            "fontSize" : 12,
-            "fontWeight" : "bold"
-          },
-          "encoding": {
-            "x": {
-              "field": "expenditure_water_population",
-              "type": "quantitative"
-            },
-            "y": {
-              "field": "percentage_houses_without_clean_water",
-              "type": "quantitative"
-            },
-            "text": {
-              "field": "State"
-            }
-        
-        }
-      },
-      {
-          "transform":[
-            {"filter": "datum.State === 'Terengganu'"}
-          ],
-          "mark": {
-            "type": "text",
-            "align": "left",
-            "dx": -40,  
-            "dy": 15 ,
-            "fontSize" : 12,
-            "fontWeight" : "bold"
-          },
-          "encoding": {
-            "x": {
-              "field": "expenditure_water_population",
-              "type": "quantitative"
-            },
-            "y": {
-              "field": "percentage_houses_without_clean_water",
-              "type": "quantitative"
-            },
-            "text": {
-              "field": "State"
-            }
-        
         }
       }
   ]
