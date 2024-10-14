@@ -134,18 +134,17 @@
     "values": [
       {"state": "Johor", "latitude": 1.9854, "longitude": 103.2618},
       {"state": "Kedah", "latitude": 6.1184, "longitude": 100.3681},
-      {"state": "Kelantan", "latitude": 6.2456, "longitude": 101.9976},
+      {"state": "Kelantan", "latitude": 6.3456, "longitude": 101.9976},
       {"state": "Melaka", "latitude": 2.000, "longitude": 101.9000},
-      {"state": "N.Sembilan", "latitude": 2.7255, "longitude": 102.1424},
-      {"state": "Pahang", "latitude": 3.8126, "longitude": 102.3256},
-      {"state": "Perak", "latitude": 4.5921, "longitude": 100.4901},
-      {"state": "Perlis", "latitude": 6.4431, "longitude": 100.1983},
-      {"state": "Penang", "latitude": 5.4141, "longitude": 100.3288},
+      {"state": "Negeri Sembilan", "latitude": 2.4255, "longitude": 100.7424},
+      {"state": "Pahang", "latitude": 3.326, "longitude": 102.4256},
+      {"state": "Perak", "latitude": 4.5921, "longitude": 100.8901},
+      {"state": "Perlis", "latitude": 6.7431, "longitude": 100.1983},
+      {"state": "Penang", "latitude": 5.3141, "longitude": 99.4288},
       {"state": "Sabah", "latitude": 5.38, "longitude": 117.0753},
       {"state": "Sarawak", "latitude": 2.478, "longitude": 113.0592},
-      {"state": "Selangor", "latitude": 3.3738, "longitude": 101.3683},
-      {"state": "Terengganu", "latitude": 5.0117, "longitude": 103.2524},
-      {"state": "K.Lumpur", "latitude": 3.139, "longitude": 101.6869}
+      {"state": "Selangor", "latitude": 3.0738, "longitude": 100.5683},
+      {"state": "Terengganu", "latitude": 5.0117, "longitude": 103.2524}
     ]
   },
   "mark": {
@@ -269,14 +268,14 @@
     {"state": "Kedah", "latitude": 6.000, "longitude": 100.6681},
     {"state": "Kelantan", "latitude": 6.0456, "longitude": 102.100},
     {"state": "Melaka", "latitude": 2.200, "longitude": 102.3000},
-    {"state": "Negeri Sembilan", "latitude": 2.5555, "longitude": 102.1424},
+    {"state": "Negeri Sembilan", "latitude": 2.7555, "longitude": 102.2424},
     {"state": "Pahang", "latitude": 3.6526, "longitude": 102.4256},
-    {"state": "Perak", "latitude": 4.4621, "longitude": 100.6401},
-    {"state": "Perlis", "latitude": 6.8531, "longitude": 100.383},
-    {"state": "Pulau Pinang", "latitude": 5.3000, "longitude": 99.9288},
+    {"state": "Perak", "latitude": 4.4621, "longitude": 101.0401},
+    {"state": "Perlis", "latitude": 6.6031, "longitude": 100.183},
+    {"state": "Pulau Pinang", "latitude": 5.3000, "longitude": 100.2288},
     {"state": "Sabah", "latitude": 5.18, "longitude": 117.0753},
     {"state": "Sarawak", "latitude": 2.278, "longitude": 113.2192},
-    {"state": "Selangor", "latitude": 3.4738, "longitude": 100.7000},
+    {"state": "Selangor", "latitude": 3.2738, "longitude": 101.4000},
     {"state": "Terengganu", "latitude": 4.9000, "longitude": 103.2524}
   ]
 },
