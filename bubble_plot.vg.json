@@ -1,7 +1,7 @@
 {
     "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
     "title": {
-      "text":"Disease Rates, Water Quality, and Density of Water Treatment Plants",
+      "text":"Disease Rates, Water Quality, and Density of Water Treatment Plants(WTP)",
       "fontSize": 18,
       "anchor": "middle",  
        "align": "center",
@@ -9,7 +9,7 @@
   },
   "background":"#f9f9f9",
     "height": 400,
-    "width": 550,
+    "width": 630,
     "data": {
       "url": "https://raw.githubusercontent.com/AliciaChongPQ/FIT3179-Assignment-2/refs/heads/main/diseases_per_1M.csv"
     },
@@ -65,7 +65,7 @@
           "title": "Cases per 1M population",
           "axis": { "grid": false ,"ticks":false} 
         },
-        "size":{ "field":"water_treatment_plant_per_1000kms", "scale":{"type": "linear", "range":[200,1000]},"title":"Water Treatment Plants per 1000km^2"},
+        "size":{ "field":"water_treatment_plant_per_1000kms", "scale":{"type": "linear", "range":[200,1000]},"title":"WTP per 1000km^2"},
         "color": {
         "field": "area",
         "type": "nominal",
