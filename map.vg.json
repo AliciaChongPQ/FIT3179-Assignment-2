@@ -8,6 +8,7 @@
        "align": "center",
        "orient": "top"  
   },
+  "padding":{"bottom": 10},
     "width": 1200,
     "height": 600,
     "projection": {"type": "equalEarth",
@@ -267,7 +268,7 @@
     {"state": "Johor", "latitude": 1.8854, "longitude": 103.4018},
     {"state": "Kedah", "latitude": 6.000, "longitude": 100.6681},
     {"state": "Kelantan", "latitude": 6.0456, "longitude": 102.100},
-    {"state": "Melaka", "latitude": 2.000, "longitude": 101.9000},
+    {"state": "Melaka", "latitude": 2.200, "longitude": 102.3000},
     {"state": "Negeri Sembilan", "latitude": 2.5555, "longitude": 102.1424},
     {"state": "Pahang", "latitude": 3.6526, "longitude": 102.4256},
     {"state": "Perak", "latitude": 4.4621, "longitude": 100.6401},
