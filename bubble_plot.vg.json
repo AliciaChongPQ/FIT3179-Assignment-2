@@ -71,7 +71,7 @@
         "type": "nominal",
         "scale": {
           "domain": ["West Coast", "East Coast", "East Malaysia"],
-          "range": ["#1f77b4", "#ff7f0e", "#2ca02c"] 
+          "range": ["#0b3687", "#dea0c8", "#8cab92"] 
         },
         "title": "Region"
       },
