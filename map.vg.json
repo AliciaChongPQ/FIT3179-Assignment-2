@@ -2,7 +2,7 @@
     "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
     "background":"#f9f9f9",
     "title": {
-      "text":"Incidence Rate of water-borne diseases By State in Malaysia per 1M population",
+      "text":"Incidence Rate of Water-borne Diseases By State in Malaysia per 1M population",
       "fontSize": 18,
       "anchor": "middle",  
        "align": "center",
