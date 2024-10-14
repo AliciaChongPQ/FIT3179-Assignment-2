@@ -163,7 +163,7 @@
           "title": "Disease",
           "scale": {
             "domain": ["Typhoid", "Hepatitis A"],
-            "range": ["#755a85", "6e889c"]
+            "range": ["#755a85", "#6e889c"]
           }
         },
         "tooltip":[
