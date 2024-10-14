@@ -80,10 +80,10 @@
       },
         "tooltip": [
           {"field": "State", "type": "nominal"},
-          {"field": "water_treatment_plant_per_kms", "type": "quantitative", "title": "Number of Water Treatment Plants per KM^2"},
-          {"field": "percentage_houses_without_clean_water", "type": "quantitative", "title": "Percentage of Houses without Clean Water"},
-          {"field": "total_disease_incidence_rate", "type": "quantitative", "title": "Total Incidence rate of Typhoid, Malaria and Hepatitis A"},
-          {"field": "water_supply_interruption_per_1M", "type": "quantitative", "format": ",", "title": "water_supply_interruption_per_1M"}
+          
+          {"field": "total_disease_incidence_rate", "type": "quantitative", "title": "Total Incidence rate of Typhoid, Malaria and Hepatitis A","format":".2f"},
+          {"field": "water_treatment_plant_per_1000kms", "type": "quantitative", "title": "Water Treatment Plants per 1000KM^2","format":".2f"},
+          {"field": "percentage_houses_without_clean_water", "type": "quantitative", "title": "Percentage of Houses without Clean Water","format":".2f"}
         ]
         }
       }
