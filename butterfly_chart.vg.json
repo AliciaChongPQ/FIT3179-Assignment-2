@@ -39,7 +39,6 @@
       {"filter": "datum.percnt_house_wout_clean_water < 100"}
     ],
     "spacing": 0,
-    
     "hconcat": [
       {
         "title": {"text":"Water Quality Complaints and", "anchor": "end",  "fontSize": 16},
